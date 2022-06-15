@@ -16,7 +16,8 @@
 .VideoBg {
   width: 100%;
   height: 100%;
-  background-image: url("./assets/HomeBackground.svg");
+  background-image: url("./assets/HomeBackground.jpg");
+  background-color: black;
   background-size: cover;
   -o-object-fit: cover;
   object-fit: cover;
@@ -32,6 +33,6 @@
 
 .HomeLogo {
   position: absolute;
-  width: 75%;
+  width: 60%;
   height: 75%;
 }

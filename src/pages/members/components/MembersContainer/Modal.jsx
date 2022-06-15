@@ -35,13 +35,17 @@ export default function ModalTeste({ open, member }) {
                 Idade:{" "}
                 <strong>{moment().diff(member.nascimento, "years")}</strong>
               </dt>
-              <dt>
-                Principais Tecnologias e Frameworks:{" "}
-                <strong>{member.linguagens}</strong>
-              </dt>
-              <dt>
-                Hobby: <strong>{member.hobby}</strong>
-              </dt>
+              {member.linguagens != "" && (
+                <dt>
+                  Principais Tecnologias e Frameworks:{" "}
+                  <strong>{member.linguagens}</strong>
+                </dt>
+              )}
+              {member.hobby != "" && (
+                <dt>
+                  Hobby: <strong>{member.hobby}</strong>
+                </dt>
+              )}
             </div>
 
             <div className="Member">
@@ -54,24 +58,27 @@ export default function ModalTeste({ open, member }) {
               <div className={`placeHolderModalMembers ${isLoaded && "open"}`}>
                 <FaUser />
               </div>
-
               <div className="socialModalMembersMembers">
-                <a
-                  className="socialMediaModal socialLinkedin"
-                  href={member.linkedinLink}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <AiFillLinkedin />
-                </a>
-                <a
-                  className="socialMediaModal socialGithub"
-                  href={member.githubLink}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <AiFillGithub />
-                </a>
+                {member.linkedinLink != "" && (
+                  <a
+                    className="socialMediaModal socialLinkedin"
+                    href={member.linkedinLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <AiFillLinkedin />
+                  </a>
+                )}
+                {member.githubLink != "" && (
+                  <a
+                    className="socialMediaModal socialGithub"
+                    href={member.githubLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <AiFillGithub />
+                  </a>
+                )}
               </div>
             </div>
           </div>
